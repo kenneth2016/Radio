@@ -1,4 +1,4 @@
-class radio():
+class Radio():
 	def __init__ (self, marca):
 		self.marca= marca
 		self.encendido = False
@@ -39,6 +39,26 @@ class radio():
 			else:
 				self.emisora_AM+=0.5
 
+	def bajar_estacion(self):
+		if not self.emisora_FM:
+			if self.emisora_AM<=1300:
+				self.emisora_AM=300
+			else:
+				self.emisora_AM-=40
 
+		else:
+			if not self.emisora_AM:
+			if self.emisora_AM<=107.0:
+				self.emisora_AM=87.0
+			else:
+				self.emisora_AM-=0.5
+
+	def cambiar (self):
+		if self.en_FM==True:
+			self.en_FM=False
+		else:
+			self.en_FM=True
+
+			
 
 
