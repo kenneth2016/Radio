@@ -26,7 +26,7 @@ class Radio():
 			self.volumen-=5
 
 	def subir_estacion(self):
-		if not self.emisora_FM:
+		if not self.en_FM:
 			if self.emisora_AM>=1300:
 				self.emisora_AM=300
 			else:
@@ -34,13 +34,13 @@ class Radio():
 
 		else:
 			if not self.emisora_AM:
-			if self.emisora_AM>=107.0:
-				self.emisora_AM=87.0
-			else:
-				self.emisora_AM+=0.5
+				if self.emisora_AM>=107.0:
+					self.emisora_AM=87.0
+				else:
+					self.emisora_AM+=0.5
 
 	def bajar_estacion(self):
-		if not self.emisora_FM:
+		if not self.en_FM:
 			if self.emisora_AM<=1300:
 				self.emisora_AM=300
 			else:
@@ -48,17 +48,13 @@ class Radio():
 
 		else:
 			if not self.emisora_AM:
-			if self.emisora_AM<=107.0:
-				self.emisora_AM=87.0
-			else:
-				self.emisora_AM-=0.5
+				if self.emisora_AM<=107.0:
+					self.emisora_AM=87.0
+				else:
+					self.emisora_AM-=0.5
 
 	def cambiar (self):
 		if self.en_FM==True:
 			self.en_FM=False
 		else:
 			self.en_FM=True
-
-			
-
-
